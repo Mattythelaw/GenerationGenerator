@@ -16,20 +16,26 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        //Linking the XML views to Kotlin variables using their IDs//
         val edtYear = findViewById<EditText>(R.id.edtYear)
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
         val txtGen = findViewById<TextView>(R.id.txtGen)
 
+        //using a set on click listener when the user clicks on it//
         btnSubmit.setOnClickListener {
+
+            // Get the text the user typed in the EditText and convert it to a String//
             val yearText = edtYear.text.toString()
 
+            // Check if the conversion failed (e.g. user typed letters instead of numbers)
             if (yearText.isEmpty()) {
                 txtGen.text = "Please enter a year"
                 return@setOnClickListener
             }
-
+            // Convert the String to an Integer directly//
             val year = yearText.toInt()
 
+            // Use a when statement with ranges to determine the generation
             val generation = when (year) {
                 in 1901..1927 -> "The Greatest Generation"
                 in 1928..1945 -> "The Silent Generation"
@@ -40,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 in 2013..2025 -> "Generation Alpha"
                 else -> "Generation not found in this year"
             }
-
+            //Displaying the users generation//
             txtGen.text = "You are in: $generation"
 
         }
