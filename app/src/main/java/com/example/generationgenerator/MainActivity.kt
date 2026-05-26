@@ -20,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
         val txtGen = findViewById<TextView>(R.id.txtGen)
 
+        btnSubmit.setOnClickListener {
+            val yearText = edtYear.text.toString()
+
+            
+
+        }
+
 
 
 
