@@ -23,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val yearText = edtYear.text.toString()
 
-            
+            if (yearText.isEmpty()) {
+                txtGen.text = "Please enter a year"
+                return@setOnClickListener
+            }
+
+            val year = yearText.toInt()
 
         }
 
