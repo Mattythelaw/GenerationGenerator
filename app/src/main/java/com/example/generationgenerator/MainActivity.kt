@@ -30,6 +30,19 @@ class MainActivity : AppCompatActivity() {
 
             val year = yearText.toInt()
 
+            val generation = when (year) {
+                in 1901..1927 -> "The Greatest Generation"
+                in 1928..1945 -> "The Silent Generation"
+                in 1946..1964 -> "Baby Boomer"
+                in 1965..1980 -> "Generation X"
+                in 1981..1996 -> "Millennial"
+                in 1997..2012 -> "Generation Z"
+                in 2013..2025 -> "Generation Alpha"
+                else -> "Generation not found in this year"
+            }
+
+            txtGen.text = "You are in: $generation"
+
         }
 
 
